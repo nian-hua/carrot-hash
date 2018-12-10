@@ -649,7 +649,7 @@ carrotstatus = true;
 
 		var somd5 = document.getElementById('carrot-somd5');
 
-		var alphabet = "0123456789abcdef";
+		var alphabet = "0123456789abcdef:";
 
 		ciphertext = ciphertext.toLowerCase();
 
@@ -671,8 +671,10 @@ carrotstatus = true;
 
 		if((cipherlength != 16)&&(cipherlength != 32)&&(cipherlength != 40)&&(cipherlength != 56)&&(cipherlength != 64)&&(cipherlength != 96)&&(cipherlength != 128)){
 
-			errorflag = true;
+			if(ciphertext.indexOf(':') == -1){
 
+				errorflag = true;
+			}
 		}
 
 		if(errorflag){
